@@ -7,3 +7,7 @@ body {
 .text-very-muted {
  color: #999 !important;
 }
+
+.text-super-muted {
+    color: #ddd !important;
+}

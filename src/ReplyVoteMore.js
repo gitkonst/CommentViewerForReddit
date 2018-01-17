@@ -7,7 +7,7 @@ function ReplyUpvotesMore({num_upvotes}) {
         <li className="list-inline-item px-1">
           <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
         </li>
-        <li className="list-inline-item px-1">｜</li>
+        <li className="list-inline-item px-1 text-super-muted">｜</li>
         <li className="list-inline-item px-1">
           <i className="fa fa-arrow-up" aria-hidden="true"></i>
         </li>

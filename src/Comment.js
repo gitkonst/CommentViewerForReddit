@@ -23,7 +23,8 @@ class Comment extends Component {
     }
     let arrowClassNames = classNames(
       "fa fa-arrow-circle-down mr-2",
-      {"text-info": this.props.depth == 0}
+      {"text-info": this.props.depth == 0},
+      {"text-very-muted":  this.props.depth != 0}
     );
 
     return (
