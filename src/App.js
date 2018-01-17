@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReplyUpvotesMore from './ReplyUpvotesMore';
+import ReplyVoteMore from './ReplyVoteMore';
+import Comment from './Comment';
 
 import submissionJSON from './sample_reddit_json_14.01.18';
 
@@ -13,13 +14,18 @@ class App extends Component {
           <h4><small>{submissionJSON.title}</small></h4>
           <p className="my-2">u/{submissionJSON.author}</p>
         </div>
+        {/*
         <img
           src={gif.url}
           className="img-fluid d-block"
-          alt={submissionJSON.title}
+          alt="Submission image/animation"
         />
-        <ReplyUpvotesMore
-          num_upvotes={submissionJSON.ups}
+        */}
+        <ReplyVoteMore num_upvotes={submissionJSON.ups}/>
+        <hr className="my-0"/>
+        <Comment
+          {...submissionJSON.comments[0]}
+          depth={0}
         />
       </div>
     );
