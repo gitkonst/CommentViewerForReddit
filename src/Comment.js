@@ -8,7 +8,6 @@ class Comment extends Component {
     }
   }
   render() {
-    console.log(this.props);
     let props = this.props;
     if(!props.replies.length) {
       return null;
