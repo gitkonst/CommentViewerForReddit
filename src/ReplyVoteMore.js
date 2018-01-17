@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 function ReplyUpvotesMore({num_upvotes}) {
   return (
     <div className="clearfix">
-      <ul className="list-inline container-fluid text-muted float-right float-md-left py-2 mb-0">
+      <ul className="list-inline container-fluid text-very-muted float-right float-md-left py-2 mb-0">
         <li className="list-inline-item px-1">
           <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
         </li>
