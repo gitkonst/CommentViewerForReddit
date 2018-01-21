@@ -17,7 +17,8 @@ class Comment extends Component {
    );
   }
 
-  toggleMinimize = () => {
+  toggleMinimize = (event) => {
+    event.preventDefault();
     this.setState({minimized: !this.state.minimized});
   }
 
@@ -26,7 +27,7 @@ class Comment extends Component {
       return null;
     }
     let arrowClassNames = classNames(
-      "fa fa-arrow-circle-down mr-2",
+      "fa fa-arrow-circle-down mr-2 no-selection",
       {"text-info": this.props.depth === 0},
       {"text-very-muted":  this.props.depth !== 0}
     );
