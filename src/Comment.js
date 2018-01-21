@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames'
 import ReplyScoreMore from './ReplyScoreMore';
+import CommentArray from './CommentArray';
 
 class Comment extends Component {
   constructor(props) {
@@ -15,12 +16,7 @@ class Comment extends Component {
       <div>
         <div dangerouslySetInnerHTML={this.body_html()}/>
         <ReplyScoreMore score={this.props.score}/>
-        {this.props.replies.map(comment_prop => (
-          <Comment
-            {...comment_prop}
-            key={comment_prop.id}
-          />
-        ))}
+        <CommentArray comment_prop_array={this.props.replies}/>
       </div>
    );
   }
@@ -38,14 +34,12 @@ class Comment extends Component {
       {"rotate-minus-90": this.state.minimized},
       {"no-rotate": !this.state.minimized},
     );
-
     let containerMargins = (this.props.depth === 0) ? "px-3" : "ml-6 pl-6 pr-0";
     let containerClases = classNames(
       containerMargins,
       {"border-left": this.props.depth > 1},
       {"border-left-thick": this.props.depth === 1},
     );
-
     return (
       <div className={containerClases}>
         <i className={arrowClassNames} aria-hidden="true" role="button" onClick={this.toggleMinimize} />
