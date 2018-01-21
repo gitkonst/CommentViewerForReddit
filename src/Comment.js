@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames'
-import ReplyVoteMore from './ReplyVoteMore';
+import ReplyScoreMore from './ReplyScoreMore';
 
 class Comment extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Comment extends Component {
     return (
       <div>
         <div>{this.props.body}</div>
-        <ReplyVoteMore />
+        <ReplyScoreMore score={this.props.score} />
         <Comment {...this.props.replies[0]} depth={this.props.depth + 1}/>
       </div>
    );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReplyVoteMore from './ReplyVoteMore';
+import ReplyScoreMore from './ReplyScoreMore';
 import TopLevelComments from './TopLevelComments';
 
 import submissionJSON from './sample_reddit_json_14.01.18';
@@ -21,7 +21,7 @@ class App extends Component {
           alt="Submission image/animation"
         />
         */}
-        <ReplyVoteMore num_upvotes={submissionJSON.ups}/>
+        <ReplyScoreMore score={submissionJSON.ups}/>
         <hr className="my-0"/>
         <TopLevelComments comments_props={submissionJSON.comments}/>
       </div>

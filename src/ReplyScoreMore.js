@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-function ReplyUpvotesMore({num_upvotes}) {
+function ReplyScoreMore({score}) {
   return (
     <div className="clearfix">
       <ul className="list-inline container-fluid text-very-muted float-right float-md-left py-2 mb-0">
@@ -11,7 +11,7 @@ function ReplyUpvotesMore({num_upvotes}) {
         <li className="list-inline-item px-1" role="button">
           <i className="fa fa-arrow-up" aria-hidden="true"></i>
         </li>
-        <li className="list-inline-item px-1">{num_upvotes}</li>
+        <li className="list-inline-item px-1">{score}</li>
         <li className="list-inline-item px-1" role="button">
           <i className="fa fa-arrow-down" aria-hidden="true" role="button"></i>
         </li>
@@ -20,4 +20,4 @@ function ReplyUpvotesMore({num_upvotes}) {
   );
 }
 
-export default ReplyUpvotesMore;
+export default ReplyScoreMore;
