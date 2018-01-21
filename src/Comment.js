@@ -29,7 +29,9 @@ class Comment extends Component {
     let arrowClassNames = classNames(
       "fa fa-arrow-circle-down mr-2 no-selection",
       {"text-info": this.props.depth === 0},
-      {"text-very-muted":  this.props.depth !== 0}
+      {"text-very-muted":  this.props.depth !== 0},
+      {"rotate-minus-90": this.state.minimized},
+      {"no-rotate": !this.state.minimized},
     );
 
     let container_margins = (this.props.depth === 0) ? "mx-3" : "ml-3 mr-0";
