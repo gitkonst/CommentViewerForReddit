@@ -3,7 +3,7 @@ import Comment from './Comment';
 
 function TopLevelComments({comments_props}) {
   return (
-    <div>
+    <div className="mb-4">
       {comments_props.map(comment_prop => (
         <Comment
           {...comment_prop}

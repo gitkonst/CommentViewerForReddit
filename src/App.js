@@ -21,8 +21,10 @@ class App extends Component {
           alt="Submission image/animation"
         />
         */}
-        <ReplyScoreMore score={submissionJSON.ups}/>
-        <hr className="my-0"/>
+        <div className="pr-3">
+          <ReplyScoreMore score={submissionJSON.score} className="pr-4"/>
+        </div>
+        <hr className="mt-0 mb-2"/>
         <TopLevelComments comments_props={submissionJSON.comments}/>
       </div>
     );

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 function ReplyScoreMore({score}) {
   return (
     <div className="clearfix">
-      <ul className="list-inline container-fluid text-very-muted float-right float-md-left py-2 mb-0">
+      <ul className="list-inline container-fluid text-very-muted float-right float-md-left py-2 my-0 px-2">
         <li className="list-inline-item pl-0 pr-3">
           <i class="fa fa-reply" aria-hidden="true" role="button"></i>
         </li>

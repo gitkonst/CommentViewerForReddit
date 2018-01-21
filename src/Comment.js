@@ -11,7 +11,7 @@ class Comment extends Component {
     return (
       <div>
         <div>{this.props.body}</div>
-        <ReplyScoreMore score={this.props.score} />
+        <ReplyScoreMore score={this.props.score}/>
         <Comment {...this.props.replies[0]} depth={this.props.depth + 1}/>
       </div>
    );
@@ -32,8 +32,10 @@ class Comment extends Component {
       {"text-very-muted":  this.props.depth !== 0}
     );
 
+    let container_margins = (this.props.depth === 0) ? "mx-3" : "ml-3 mr-0";
+
     return (
-      <div className="ml-3 mr-0">
+      <div className={container_margins}>
         <i className={arrowClassNames} aria-hidden="true" role="button" onClick={this.toggleMinimize}></i>
         <span className="text-very-muted">{this.props.author}</span>
         {!this.state.minimized && this.minimizable_part()}
