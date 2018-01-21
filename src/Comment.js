@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import classNames from 'classnames';
 import CommentBody from './CommentBody';
 import MinimizeArrow from './MinimizeArrow';
-import {SHIFT_DEPTH_LIMIT} from "./constants";
+import {SHIFT_DEPTH_LIMIT, MINIMIZE_PAST_DEPTH} from "./constants";
 
 class Comment extends Component {
   constructor(props) {
     super(props);
-    this.state = {minimized: false};
+    this.state = {minimized: props.depth === MINIMIZE_PAST_DEPTH + 1};
   }
 
   containerClasses = () => {
