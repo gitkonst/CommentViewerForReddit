@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import CommentBody from './CommentBody';
 import MinimizeArrow from './MinimizeArrow';
+import {SHIFT_DEPTH_LIMIT} from "./constants";
 
 class Comment extends Component {
   constructor(props) {
@@ -10,11 +11,13 @@ class Comment extends Component {
   }
 
   containerClasses = () => {
-    let containerMargins = (this.props.depth === 0) ? "px-3" : "ml-6 pl-6 pr-0";
+    let depth = this.props.depth;
+    let buriedCommentMargins = depth <= SHIFT_DEPTH_LIMIT ? "ml-6 pl-6" : "";
+    let containerMargins = (depth === 0) ? "px-3" : buriedCommentMargins;
     return classNames(
       containerMargins,
-      {"border-left": this.props.depth > 1},
-      {"border-left-thick": this.props.depth === 1},
+      {"border-left": depth > 1 && depth <= SHIFT_DEPTH_LIMIT},
+      {"border-left-thick": depth === 1},
     );
   };
 
