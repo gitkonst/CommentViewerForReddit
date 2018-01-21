@@ -7,7 +7,7 @@ class Comment extends Component {
     super(props);
     this.state = {minimized: false};
   }
-  minimizable_part() {
+  minimizable_part = () => {
     return (
       <div>
         <div>{this.props.body}</div>
@@ -17,20 +17,23 @@ class Comment extends Component {
    );
   }
 
+  toggleMinimize = () => {
+    this.setState({minimized: !this.state.minimized});
+  }
+
   render() {
     if(!this.props.replies.length) {
       return null;
     }
     let arrowClassNames = classNames(
       "fa fa-arrow-circle-down mr-2",
-      {"text-info": this.props.depth == 0},
-      {"text-very-muted":  this.props.depth != 0}
+      {"text-info": this.props.depth === 0},
+      {"text-very-muted":  this.props.depth !== 0}
     );
 
     return (
       <div className="ml-3 mr-0">
-        {this.state.minimized && (<p>Minimized</p>)}
-        <i className={arrowClassNames} aria-hidden="true"></i>
+        <i className={arrowClassNames} aria-hidden="true" role="button" onClick={this.toggleMinimize}></i>
         <span className="text-very-muted">{this.props.author}</span>
         {!this.state.minimized && this.minimizable_part()}
       </div>
