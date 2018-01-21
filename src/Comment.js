@@ -34,10 +34,15 @@ class Comment extends Component {
       {"no-rotate": !this.state.minimized},
     );
 
-    let container_margins = (this.props.depth === 0) ? "mx-3" : "ml-3 mr-0";
+    let containerMargins = (this.props.depth === 0) ? "px-3" : "pl-3 pr-0";
+    let containerClases = classNames(
+      containerMargins,
+      {"border-left": this.props.depth > 1},
+      {"border-left-thick": this.props.depth === 1},
+    );
 
     return (
-      <div className={container_margins}>
+      <div className={containerClases}>
         <i className={arrowClassNames} aria-hidden="true" role="button" onClick={this.toggleMinimize}></i>
         <span className="text-very-muted">{this.props.author}</span>
         {!this.state.minimized && this.minimizable_part()}

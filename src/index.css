@@ -30,3 +30,11 @@ body {
     transform: rotate(0deg);
     transition: 150ms ease-out transform;
 }
+
+.border-left {
+    border-left: 1px solid #efefed;
+}
+
+.border-left-thick {
+    border-left: 2px solid #efefed;
+}
