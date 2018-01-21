@@ -18,7 +18,6 @@ class Comment extends Component {
         {this.props.replies.map(comment_prop => (
           <Comment
             {...comment_prop}
-            depth={this.props.depth + 1}
             key={comment_prop.id}
           />
         ))}
@@ -32,9 +31,6 @@ class Comment extends Component {
   }
 
   render() {
-    if(!this.props.replies.length) {
-      return null;
-    }
     let arrowClassNames = classNames(
       "fa fa-arrow-circle-down mr-2 no-selection",
       {"text-info": this.props.depth === 0},

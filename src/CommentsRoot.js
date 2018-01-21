@@ -7,7 +7,6 @@ function CommentsRoot({comments_props}) {
       {comments_props.map(comment_prop => (
         <Comment
           {...comment_prop}
-          depth={0}
           key={comment_prop.id}
         />
       ))}
