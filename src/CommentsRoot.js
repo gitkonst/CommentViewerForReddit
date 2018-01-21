@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
 
-function TopLevelComments({comments_props}) {
+function CommentsRoot({comments_props}) {
   return (
-    <div className="mb-4">
+    <div className="container px-0 mb-4">
       {comments_props.map(comment_prop => (
         <Comment
           {...comment_prop}
@@ -15,4 +15,4 @@ function TopLevelComments({comments_props}) {
   );
 }
 
-export default TopLevelComments;
+export default CommentsRoot;
