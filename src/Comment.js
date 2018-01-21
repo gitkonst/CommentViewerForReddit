@@ -7,10 +7,13 @@ class Comment extends Component {
     super(props);
     this.state = {minimized: false};
   }
+  body_html() {
+    return {__html: this.props.body_html };
+  }
   minimizable_part = () => {
     return (
       <div>
-        <div>{this.props.body}</div>
+        <div dangerouslySetInnerHTML={this.body_html()}/>
         <ReplyScoreMore score={this.props.score}/>
         {this.props.replies.map(comment_prop => (
           <Comment
