@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReplyScoreMore from './ReplyScoreMore';
-import CommentArray from './CommentArray'
+import CommentArray from './CommentArray';
+import ShiftlessImage from './ShiftlessImage';
 
 import submissionJSON from './sample_reddit_json_14.01.18';
 
@@ -14,20 +15,11 @@ class App extends Component {
           <h4><small>{submissionJSON.title}</small></h4>
           <p className="my-2">u/{submissionJSON.author}</p>
         </div>
-        {/*
-        <img
-          src={gif.url}
-          className="img-fluid d-block"
-          alt="Submission image/animation"
-        />
-        */}
+        {/*<ShiftlessImage {...gif}/>*/}
         <div className="pr-3">
-          <ReplyScoreMore score={submissionJSON.score} className="pr-4"/>
+          <ReplyScoreMore score={submissionJSON.score}/>
         </div>
         <hr className="mt-0 mb-2"/>
-        {/*
-        <CommentsRoot comments_props={submissionJSON.comments}/>
-        */}
         <CommentArray comment_prop_array={submissionJSON.comments}/>
       </div>
     );
