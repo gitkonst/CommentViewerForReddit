@@ -25,11 +25,21 @@ class Comment extends Component {
     this.setState({minimized: !this.state.minimized});
   };
 
+  commentAgeInDays = () => {
+    const now = Date.now();
+    const created = (new Date(this.props.created_utc * 1000)).getTime();
+    const ageMillis = now - created;
+    const ageDays = Math.round(ageMillis / 1000 / 3600 / 24);
+    return <span className="text-very-muted">{ageDays + 'd'}</span>;
+  };
+
   render() {
     return (
       <div className={this.containerClasses()}>
         <MinimizeArrow onClick={this.toggleMinimize} minimized={this.state.minimized} depth={this.props.depth}/>
         <span className="text-very-muted">{this.props.author}</span>
+        <span className="text-extreme-muted px-1">•</span>
+        {this.commentAgeInDays()}
         {!this.state.minimized && <CommentBody {...this.props} />}
       </div>
     );
