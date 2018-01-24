@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReplyScoreMore from './ReplyScoreMore';
 import CommentArray from './CommentArray';
 import ShiftlessImage from './ShiftlessImage';
+import SortSelector from './SortSelector';
 
 import submissionJSON from './sample_reddit_json_14.01.18';
 
@@ -20,6 +21,7 @@ class App extends Component {
           <ReplyScoreMore score={submissionJSON.score}/>
         </div>
         <hr className="mt-0 mb-2"/>
+        <SortSelector/>
         <CommentArray comment_prop_array={submissionJSON.comments}/>
       </div>
     );
