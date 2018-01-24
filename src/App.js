@@ -3,10 +3,22 @@ import ReplyScoreMore from './ReplyScoreMore';
 import CommentArray from './CommentArray';
 import ShiftlessImage from './ShiftlessImage';
 import SortSelector from './SortSelector';
+import SortTypes from './SortTypes';
 
 import submissionJSON from './sample_reddit_json_14.01.18';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {activeSortType: SortTypes.best};
+  }
+
+  changeSortType = (newSortType) => {
+    if(newSortType !== this.state.activeSortType) {
+      this.setState({activeSortType: newSortType});
+    }
+  };
+
   render() {
     let gif = submissionJSON.preview.images[0].variants.gif.source;
     return (
@@ -21,7 +33,7 @@ class App extends Component {
           <ReplyScoreMore score={submissionJSON.score}/>
         </div>
         <hr className="mt-0 mb-2"/>
-        <SortSelector/>
+        <SortSelector changeSortType={this.changeSortType} activeSortType={this.state.activeSortType}/>
         <CommentArray comment_prop_array={submissionJSON.comments}/>
       </div>
     );
