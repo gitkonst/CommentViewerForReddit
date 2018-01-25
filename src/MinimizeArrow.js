@@ -2,12 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 
 function MinimizeArrow({minimized, depth, onClick}) {
-  let arrowClasses = classNames(
-    "fa fa-arrow-circle-down mr-2 no-selection",
-    {"text-info": depth === 0},
-    {"text-very-muted": depth !== 0},
-    {"rotate-minus-90": minimized},
-    {"no-rotate": !minimized},
+  const rotate = minimized ? "rotate-minus-90" : "no-rotate";
+  const text = (depth === 0) ? "text-info" : "text-very-muted";
+  const arrowClasses = classNames(
+    "fa fa-arrow-circle-down mr-2",
+    text, rotate,
   );
   return (
     <i className={arrowClasses} aria-hidden="true" role="button" onClick={onClick}/>

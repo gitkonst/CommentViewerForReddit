@@ -6,17 +6,17 @@ import React from 'react';
 // To make it fit to large widths as well remove outer container.
 
 function ShiftlessImage({url, width, height}) {
-  let outerContainerStyle = {
+  const outerContainerStyle = {
     maxHeight: height,
     maxWidth: width,
   };
-  let containerStyle = {
+  const containerStyle = {
     display: 'block',
     position: 'relative',
     height: 0,
     paddingBottom: height / width * 100 + '%',
   };
-  let imgStyle= {
+  const imgStyle= {
     position: 'absolute',
     top: 0,
     left: 0,

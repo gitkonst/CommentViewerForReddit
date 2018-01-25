@@ -11,9 +11,9 @@ class Comment extends Component {
   }
 
   containerClasses = () => {
-    let depth = this.props.depth;
-    let buriedCommentMargins = depth <= SHIFT_DEPTH_LIMIT ? "ml-6 pl-6" : "";
-    let containerMargins = (depth === 0) ? "px-3" : buriedCommentMargins;
+    const depth = this.props.depth;
+    const buriedCommentMargins = depth <= SHIFT_DEPTH_LIMIT ? "ml-6 pl-6" : "";
+    const containerMargins = (depth === 0) ? "px-3" : buriedCommentMargins;
     return classNames(
       containerMargins,
       {"border-left": depth > 1 && depth <= SHIFT_DEPTH_LIMIT},

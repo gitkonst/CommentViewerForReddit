@@ -20,7 +20,7 @@ class App extends Component {
   };
 
   render() {
-    let gif = submissionJSON.preview.images[0].variants.gif.source;
+    const gif = submissionJSON.preview.images[0].variants.gif.source;
     return (
       <div className="container px-0 mb-4">
         <div className="text-muted px-2">
