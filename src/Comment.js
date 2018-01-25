@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import CommentBody from './CommentBody';
 import MinimizeArrow from './MinimizeArrow';
 import {SHIFT_DEPTH_LIMIT, MINIMIZE_PAST_DEPTH} from "./constants";
+import DepthBullets from './DepthBullets';
 
 class Comment extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Comment extends Component {
   render() {
     return (
       <div className={this.containerClasses()}>
+        <DepthBullets depth={this.props.depth}/>
         <MinimizeArrow onClick={this.toggleMinimize} minimized={this.state.minimized} depth={this.props.depth}/>
         <span className="text-very-muted">{this.props.author}</span>
         <span className="text-extreme-muted px-1">•</span>
