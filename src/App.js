@@ -3,14 +3,23 @@ import ReplyScoreMore from './ReplyScoreMore';
 import CommentArray from './CommentArray';
 import ShiftlessImage from './ShiftlessImage';
 import SortSelector from './SortSelector';
-import SortTypes from './SortTypes';
+import {DEFAULT_SORT_TYPE} from './constants';
 
 import submissionJSON from './sample_reddit_json_14.01.18';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {activeSortType: SortTypes.best};
+    this.state = {activeSortType: DEFAULT_SORT_TYPE};
+    this.sortComments(this.state);
+  }
+
+  sortComments(state) {
+    submissionJSON.comments.sort(state.activeSortType.callback);
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    this.sortComments(nextState);
   }
 
   changeSortType = (newSortType) => {
