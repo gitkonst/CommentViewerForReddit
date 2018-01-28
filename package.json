@@ -1,5 +1,6 @@
 {
   "name": "comment-viewer-for-reddit",
+  "homepage": "https://gitkonst.github.io/comment-viewer-for-reddit",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
