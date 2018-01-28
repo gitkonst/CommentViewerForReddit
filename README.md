@@ -1,2 +1,6 @@
 # Comment Viewer For Reddit
-Shows a reddit comment page generated from JSON obtained from reddit API. Uses React.
+Строит разметку комментариев сайта reddit на основе JSON от него.
+
+Целью проекта было попрактиковать **React** и **bootstrap**.
+
+[Посмотреть результат](https://gitkonst.github.io/comment-viewer-for-reddit)
