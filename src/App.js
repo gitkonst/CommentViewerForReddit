@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ReplyScoreMore from './ReplyScoreMore';
 import CommentArray from './CommentArray';
 import ShiftlessImage from './ShiftlessImage';
 import SortSelector from './SortSelector';
 import {DEFAULT_SORT_TYPE} from './constants';
+import CommentTools from "./CommentTools";
 
 import submissionJSON from './sample_reddit_json_14.01.18';
 
@@ -37,9 +37,9 @@ class App extends Component {
           <h4><small>{submissionJSON.title}</small></h4>
           <p className="my-2">u/{submissionJSON.author}</p>
         </div>
-        {/*<ShiftlessImage {...gif}/>*/}
-        <div className="pr-3">
-          <ReplyScoreMore score={submissionJSON.score}/>
+        <ShiftlessImage {...gif}/>
+        <div className="px-3">
+          <CommentTools score={submissionJSON.score}/>
         </div>
         <hr className="mt-0 mb-2"/>
         <SortSelector changeSortType={this.changeSortType} activeSortType={this.state.activeSortType}/>

@@ -9,6 +9,10 @@ p {
     padding: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
 .text-very-muted {
     color: #999 !important;
 }
@@ -58,4 +62,12 @@ p {
 
 .darken-background {
     box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.5);
+}
+
+.short-line {
+    line-height: 50%;
+}
+
+.large {
+    font-size: 3.5rem;
 }

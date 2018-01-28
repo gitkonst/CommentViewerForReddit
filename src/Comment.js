@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import classNames from 'classnames';
 import CommentBody from './CommentBody';
 import MinimizeArrow from './MinimizeArrow';
 import {SHIFT_DEPTH_LIMIT, MINIMIZE_PAST_DEPTH} from "./constants";
 import DepthBullets from './DepthBullets';
 
-class Comment extends Component {
+class Comment extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {minimized: props.depth === MINIMIZE_PAST_DEPTH + 1};
